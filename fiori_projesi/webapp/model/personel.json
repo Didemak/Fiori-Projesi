@@ -1,0 +1,11 @@
+{           
+                   "personel":[ 
+                        {   "persno":"1",
+                            "persad":"didem",
+                            "email": "didem@gmail.com"
+                        }, 
+                        {   "persno":"2",
+                            "persad":"derya",
+                            "email": "derya@gmail.com"
+                        }]
+         }

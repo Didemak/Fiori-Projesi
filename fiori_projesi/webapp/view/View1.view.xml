@@ -1,0 +1,91 @@
+<mvc:View controllerName="fiori_projesi.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:t="sap.ui.table"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:commons="sap.ui.commons"
+    height="100%">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1" >
+			
+			<f:content>
+				
+				<Toolbar ariaLabelledBy="Title2">
+					<Title id="Title2" text="Personel Bilgisi"/>
+					<ToolbarSpacer />
+				</Toolbar>
+             
+				<Label text="Personel Numarası" />
+				<Input value="{SupplierName}" />
+                <Label text="Personel Adı" />
+				<Input value="{SupplierName}" />
+				<Label text="Email" />
+				<Input value="{SupplierName}"/>
+			    <Label text="  " />
+                <Button id="myButton" text="KAYDET" width="100%" type="Accept" icon="sap-icon://save" press="onMyButtonClicked"/>
+         
+                <Toolbar ariaLabelledBy="Title3">
+					<Title id="Title3" text="Kullanıcı Verileri"/>
+					<ToolbarSpacer /> 
+				</Toolbar>
+		<Panel>
+				<t:Table visibleRowCount="3" rows="{personel>/}" id="personel" selectionMode="MultiToggle" rowSelectionChange="onContainerOpen">
+				<t:columns>
+				 	<t:Column
+						width="15rem"
+						sortProperty="personelno"> 
+						<Label text="Personel Numarası" /> 
+						<t:template>
+						<Input value= "{personel>persno}"/>
+						</t:template>
+						<!-- <Input value= "{personel>PersonelNo}"/> -->
+					</t:Column>
+					<t:Column
+						width="15rem"
+						sortProperty="personelad">
+						<Label text="Personel Adı" /> 
+						<t:template>
+						<Input value= "{personel>persad}"/>
+						</t:template>
+						<!-- <Input value= "{personel>PersonelAd}"/> -->
+					</t:Column>
+					<t:Column
+						width="15rem"
+						sortProperty="emailadress">
+						<Label text="Email" /> 
+						<t:template>
+						<Input value= "{personel>email}"/>
+						</t:template>
+						<!-- <Input value= "{personel>Email}"/> -->
+					</t:Column>
+				</t:columns>
+			    </t:Table>
+			</Panel>
+			</f:content>
+		</f:SimpleForm>
+        </content >
+    </Page>
+</mvc:View>
